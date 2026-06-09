@@ -1,0 +1,19 @@
+.sidebar{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    transition: 0.5s;
+    border:3px solid blue;
+    position: relative;
+}
+.sidebar-menu{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.sidebar-menu-link{
+    color: blue;
+}
+.sidebar-menu-link:hover{
+    color: darkblue;
+}

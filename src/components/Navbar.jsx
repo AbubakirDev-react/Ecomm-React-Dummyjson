@@ -1,9 +1,23 @@
 import React from 'react'
 import '../css/Navbar.css'
+import Products from '../data/products'
 
 
-const Navbar = ({showSidebar,setShowSidebar}) => {
+const Navbar = ({showSidebar,setShowSidebar,query, setQuery, setResults}) => {
+  const products = Products()
+  
+  const ChangeHandler = (event) => {
+    const filteredByTitle = products.filter((product)=>
+      product.title.toLowerCase().includes(event.toLowerCase()))
+    const filteredByCategory=products.filter((product)=>
+      product.category.toLowerCase().includes(event.toLowerCase())
+    )
     
+    setResults(filteredByTitle)
+    setResults(filteredByCategory)
+    setQuery(event)
+  }
+
   return (
     <div>
         <div className="container">
@@ -11,8 +25,8 @@ const Navbar = ({showSidebar,setShowSidebar}) => {
         <a href="" className='navbar-brand'>Shopify</a>
         <button className='catalog-btn' onClick={()=>setShowSidebar(!showSidebar)}><i class="bi bi-list"></i></button>
         <form action="" className='search-form'>
-            <input type="text" className='search-input' placeholder='Search in Shopify'/>
-            <button className='search-btn'>Search</button>
+            <input type="text" className='search-input' onChange={(e)=>ChangeHandler(e.target.value)} value={query} placeholder='Search in Shopify'/>
+            <button className='search-btn' type='submit'>Search</button>
         </form>
         <ul className='navbar-menu'>
             <li className='nav-item'><a href="#" className='nav-link'><i className='bi bi-person-circle'></i> Login</a></li>

@@ -1,19 +1,33 @@
 .sidebar{
-    width: 100%;
-    padding: 10px;
-    border-radius: 5px;
+    width: 20%;
+    padding: 50px 10px;
+    border-radius: 25px;
     transition: 0.5s;
     border:3px solid blue;
-    position: relative;
+    position: fixed;
+    text-align: center;
+    text-transform: capitalize;
 }
 .sidebar-menu{
     padding: 10px;
     display: flex;
     flex-direction: column;
 }
-.sidebar-menu-link{
+.sidebar button{
+    margin: 10px;
+    padding: 5px 15px;
+    background-color: transparent;
     color: blue;
+    border: 2px solid blue;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s all ease;
+    text-transform: capitalize;
 }
-.sidebar-menu-link:hover{
-    color: darkblue;
+.sidebar button:hover{
+    color: white;
+    background-color: blue;
+}
+.sidebar button:active{
+    background-color: darkblue;
 }

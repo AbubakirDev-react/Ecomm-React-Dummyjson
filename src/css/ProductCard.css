@@ -1,5 +1,5 @@
 .card-content{
-    padding: 10px;
+    padding: 10px 20px;
 }
 .card-actions{
     display: flex;
@@ -10,6 +10,9 @@
 .card-actions a{
     color: blue;
     font-size: 1.2rem;
+}
+.card-actions a:hover{
+    color: darkblue;
 }
 .heart, .cart{
     margin: 0 10px;

@@ -22,4 +22,10 @@
 .card{
     box-shadow: 0px 0px 5px #333;
     border-radius: 15px;
+    transition: all 0.3s ease;
+}
+.card:hover{
+    box-shadow: 0px 0px 5px #444;
+    transform: translateY(-5px);
+    transform: scale(1.05);
 }

@@ -1,0 +1,29 @@
+.product-detail
+ , .product-detail .container{
+    width: 100%;
+    display: flex;
+}
+.product-detail .container .left{
+    width: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 50px;
+}
+.left .image{
+    width: 100%;
+    position: relative;
+}
+.product-detail .container .right{
+    width: 60%;
+    position: relative;
+    display: flex;
+}
+.product-detail .right .col-lg-8{
+    padding: 2rem;
+    width: 67%;
+}
+.product-detail .right .col-lg-4{
+    padding: 2rem;
+    width: 33%;
+}

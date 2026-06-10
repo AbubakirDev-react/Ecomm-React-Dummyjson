@@ -14,7 +14,6 @@ const Navbar = ({showSidebar,setShowSidebar,query, setQuery, setResults}) => {
     )
     
     setResults(filteredByTitle)
-    setResults(filteredByCategory)
     setQuery(event)
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/ProductCard.css'
+import getProductById from '../data/products'
 
 export default function ProductCard({product}) {
   return (
@@ -14,7 +15,7 @@ export default function ProductCard({product}) {
             <p>{product.category}</p>
         </div>
         <div className="card-actions">
-            <a href='#'>View</a>
+            <a href='#' onClick={getProductById(product.id)}>View</a>
             <button className='heart'><i className='bi bi-heart'></i></button>
             <button className='cart'><i className='bi bi-cart-plus'></i></button>
         </div>

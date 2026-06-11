@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/Navbar.css'
 import Products from '../data/products'
 
 export default function SearchBar({showSidebar,setShowSidebar,query, setQuery, setResults}) {
@@ -16,14 +15,13 @@ export default function SearchBar({showSidebar,setShowSidebar,query, setQuery, s
     setQuery(event)
   }
   return (
-    <div className='searchBar'>
+    <div className='container'>
         <nav className='navbar'>
-                <form action="" className='search-form'>
-                    <button className='catalog-btn' onClick={()=>setShowSidebar(!showSidebar)}><i class="bi bi-list"></i></button>
-                    <input type="text" className='search-input' onChange={(e)=>ChangeHandler(e.target.value)} value={query} placeholder='Search in Shopify'/>
-                    <button className='search-btn' type='submit'>Search</button>
+                <button className='btn btn-primary' onClick={()=>setShowSidebar(!showSidebar)}><i class="bi bi-list"></i></button>
+                <form action="" className='d-flex'>
+                    <input type="text" className='form-control me-2' onChange={(e)=>ChangeHandler(e.target.value)} value={query} placeholder='Search in Shopify'/>
+                    <button className='btn btn-primary' type='submit'>Search</button>
                 </form>
-                
         </nav>
     </div>
   )

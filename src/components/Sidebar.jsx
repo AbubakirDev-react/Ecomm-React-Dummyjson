@@ -1,5 +1,4 @@
 import React from 'react'
-import '../css/sidebar.css'
 
 
 const Sidebar = ({products, setResults}) => {

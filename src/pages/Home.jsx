@@ -1,6 +1,5 @@
 import React, { useEffect,useState } from 'react'
 import Sidebar from '../components/Sidebar'
-import '../css/Home.css'
 import Navbar from '../components/Navbar'
 import Products from '../data/products'
 import ProductCard from '../components/ProductCard'
@@ -23,11 +22,11 @@ const Home = () => {
               </div>
             )}
             <div className="right-side">
+              <div className="row">
                 {results.map((product)=>(
-                  <div className="card" key={product.id}>
-                    <ProductCard product={product} />
-                  </div>
+                    <ProductCard product={product} key={product.id}/>
                 ))}
+                </div>
             </div>
         </div>
     </div>

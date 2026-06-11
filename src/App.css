@@ -1,5 +1,6 @@
-
-.container{
-    margin: 0 auto;
-    width: 1320px;
+.navbar .nav .nav-item .nav-link{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

@@ -1,31 +1,30 @@
 import React from 'react'
-import '../css/Footer.css'
 
 
 const Footer = () => {
   return (
-    <footer className='footer'>
-        <h3>2026 All right reversed</h3>
-        <div>
-            <ul>
-            <li><a href="#"> Telegram</a></li>
-            <li><a href="#"> GitHub</a></li>
-            <li><a href="#"> Blog</a></li>
+    <footer className='container mt-5'>
+        <h3 className='text-center'>2026 All right reversed</h3>
+        <div className='row p-3'>
+            <ul className='col-md-3 col-sm-6 text-center '>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Telegram</a></li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> GitHub</a></li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Blog</a></li>
         </ul>
-        <ul>
-            <li><a href="#"> About</a></li>
-            <li><a href="#"> Contact</a></li>
-            <li><a href="#"> Politics</a></li>
+        <ul className='col-md-3 col-sm-6 text-center'>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> About</a></li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Contact</a></li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Politics</a></li>
         </ul>
-        <ul>
-            <li><a href="#"> Pay</a></li>
-            <li><a href="#"> Deliveries</a></li>
-        <li className='creator'>Creator: AbubakirDev :)</li>
+        <ul className='col-md-3 col-sm-6 text-center'>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Pay</a></li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'> Deliveries</a></li>
+        <li className='creator list-unstyled'>Creator: AbubakirDev :)</li>
         </ul>
-        <ul>
-            <li><a href="#">Shopify Global</a> </li>
-            <li><a href="#">Shopify Canada</a> </li>
-            <li><a href="#">Shopify USA</a> </li>
+        <ul className='col-md-3 col-sm-6 text-center'>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'>Shopify Global</a> </li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'>Shopify Canada</a> </li>
+            <li className='list-unstyled'><a href="#" className='link link-underline link-underline-opacity-0'>Shopify USA</a> </li>
         </ul>
         </div>
     </footer>

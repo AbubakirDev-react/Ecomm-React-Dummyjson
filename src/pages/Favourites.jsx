@@ -12,6 +12,14 @@ export default function Favourites({favourites}) {
   const fItems = getFIWP();
   return (
     <div className="row">
+        {fItems!=0?
+            <h1 className="text-center">
+                Your favourite Products {fItems.length}
+            </h1>:
+            <h1 className="text-center">
+                You don't have favourite Products
+            </h1>
+        }
       <div className="col-12 row p-5">
         {fItems.map((item,index)=>(
             <div className="row p-3" key={index}>

@@ -1,12 +1,11 @@
 import React,{useState,useEffect} from 'react'
 import getProductById from '../data/products'
 import { Link } from 'react-router-dom'
+import { useFavourite } from '../context/favouriteContext'
 
 
-export default function ProductCard({product,setFavourites}) {
-    
-
-
+export default function ProductCard({product}) {
+    const {addToFavourites} = useFavourite();
   return (
     <div className='col-md-3 col-sm-6 p-2'>
         <div className="card h-100">
@@ -23,9 +22,9 @@ export default function ProductCard({product,setFavourites}) {
                 </p>
                 <p className=''>{product.brand} <i className="bi bi-patch-check-fill" style={{color:'blue'}}></i></p>
             <div className="card-actions d-flex justify-content-evenly align-items-center">
-                <Link className='link link-underline link-underline-opacity-0' to={`/product/${product.id}`} onClick={getProductById(product.id)}>View</Link>
-                <button className='btn text-danger fs-4' onClick={()=>setFavourites(prev=>[...prev,product.id])}>{product.liked ? <i className='bi bi-heart-fill'></i>:<i className='bi bi-heart'></i>}</button>
-                <button className='btn fs-4 text-warning'><i className='bi bi-cart-plus'></i></button>
+                <Link className='btn btn-sm btn-outline-primary' to={`/product/${product.id}`} onClick={getProductById(product.id)}>View</Link>
+                <button className='btn btn-sm btn-outline-danger' onClick={()=>addToFavourites(product.id)}>Add to favourites</button>
+                <button className='btn btn-sm btn-outline-warning'>Add to Cart</button>
             </div>
             </div>
         </div>

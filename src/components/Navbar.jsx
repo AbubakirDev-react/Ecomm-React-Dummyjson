@@ -12,7 +12,6 @@ const Navbar = ({}) => {
         <Link to='/' className='navbar-brand'>Shopify</Link>
           <ul className='nav'>
             <li className='nav-item'><Link to="/" className='nav-link'><i className='bi bi-house-fill'></i><span> Home</span></Link></li>
-            <li className='nav-item'><a href="#" className='nav-link'><i className='bi bi-person-circle'></i> <span> Login</span></a></li>
             <li className='nav-item'><Link to="/favourites/" className='nav-link'><i className='bi bi-heart'></i> <span> Favourites</span></Link></li>
             <li className='nav-item'><a href="#" className='nav-link'><i className='bi bi-cart'></i> <span> Cart</span></a></li>
             <li className='nav-item'><a href="#" className='nav-link'><i className='bi bi-box'></i> <span> Deliveries</span></a></li>

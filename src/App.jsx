@@ -7,18 +7,21 @@ import Products from './data/products'
 import { Routes,Route } from 'react-router-dom'
 import ProductDetail from './pages/ProductDetail'
 import Favourites from './pages/Favourites'
+import FavouriteProvider from './context/favouriteContext'
 
 function App() {
   const [ favourites,setFavourites ] = useState([]);
   return (
     <>
-      <Navbar/> 
-        <Routes>
-          <Route path='/' element={<Home setFavourites={setFavourites} />} />
-          <Route path='/product/:id' element={<ProductDetail />} />
-          <Route path='/favourites/' element={<Favourites favourites={favourites} /> } />
-        </Routes>
+        <FavouriteProvider>
+      <Navbar/>
+          <Routes>
+            <Route path='/' element={<Home setFavourites={setFavourites} />} />
+            <Route path='/product/:id' element={<ProductDetail />} />
+            <Route path='/favourites/' element={<Favourites favourites={favourites} /> } />
+          </Routes>
       <Footer/>
+          </FavouriteProvider>
     </>
   )
 }

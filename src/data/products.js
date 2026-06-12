@@ -4,6 +4,7 @@
 const products = [
     {
       "id": 1,
+      "liked":false,
       "title": "Essence Mascara Lash Princess",
       "description": "The Essence Mascara Lash Princess is a popular mascara known for its volumizing and lengthening effects. Achieve dramatic lashes with this long-lasting and cruelty-free formula.",
       "category": "beauty",
@@ -64,6 +65,7 @@ const products = [
     },
     {
       "id": 2,
+      "liked":false,
       "title": "Eyeshadow Palette with Mirror",
       "description": "The Eyeshadow Palette with Mirror offers a versatile range of eyeshadow shades for creating stunning eye looks. With a built-in mirror, it's convenient for on-the-go makeup application.",
       "category": "beauty",
@@ -124,6 +126,7 @@ const products = [
     },
     {
       "id": 3,
+      "liked":false,
       "title": "Powder Canister",
       "description": "The Powder Canister is a finely milled setting powder designed to set makeup and control shine. With a lightweight and translucent formula, it provides a smooth and matte finish.",
       "category": "beauty",
@@ -184,6 +187,7 @@ const products = [
     },
     {
       "id": 4,
+      "liked":false,
       "title": "Red Lipstick",
       "description": "The Red Lipstick is a classic and bold choice for adding a pop of color to your lips. With a creamy and pigmented formula, it provides a vibrant and long-lasting finish.",
       "category": "beauty",
@@ -244,6 +248,7 @@ const products = [
     },
     {
       "id": 5,
+      "liked":false,
       "title": "Red Nail Polish",
       "description": "The Red Nail Polish offers a rich and glossy red hue for vibrant and polished nails. With a quick-drying formula, it provides a salon-quality finish at home.",
       "category": "beauty",
@@ -304,6 +309,7 @@ const products = [
     },
     {
       "id": 6,
+      "liked":false,
       "title": "Calvin Klein CK One",
       "description": "CK One by Calvin Klein is a classic unisex fragrance, known for its fresh and clean scent. It's a versatile fragrance suitable for everyday wear.",
       "category": "fragrances",
@@ -366,6 +372,7 @@ const products = [
     },
     {
       "id": 7,
+      "liked":false,
       "title": "Chanel Coco Noir Eau De",
       "description": "Coco Noir by Chanel is an elegant and mysterious fragrance, featuring notes of grapefruit, rose, and sandalwood. Perfect for evening occasions.",
       "category": "fragrances",
@@ -428,6 +435,7 @@ const products = [
     },
     {
       "id": 8,
+      "liked":false,
       "title": "Dior J'adore",
       "description": "J'adore by Dior is a luxurious and floral fragrance, known for its blend of ylang-ylang, rose, and jasmine. It embodies femininity and sophistication.",
       "category": "fragrances",
@@ -490,6 +498,7 @@ const products = [
     },
     {
       "id": 9,
+      "liked":false,
       "title": "Dolce Shine Eau de",
       "description": "Dolce Shine by Dolce & Gabbana is a vibrant and fruity fragrance, featuring notes of mango, jasmine, and blonde woods. It's a joyful and youthful scent.",
       "category": "fragrances",
@@ -552,6 +561,7 @@ const products = [
     },
     {
       "id": 10,
+      "liked":false,
       "title": "Gucci Bloom Eau de",
       "description": "Gucci Bloom by Gucci is a floral and captivating fragrance, with notes of tuberose, jasmine, and Rangoon creeper. It's a modern and romantic scent.",
       "category": "fragrances",
@@ -614,6 +624,7 @@ const products = [
     },
     {
       "id": 11,
+      "liked":false,
       "title": "Annibale Colombo Bed",
       "description": "The Annibale Colombo Bed is a luxurious and elegant bed frame, crafted with high-quality materials for a comfortable and stylish bedroom.",
       "category": "furniture",
@@ -676,6 +687,7 @@ const products = [
     },
     {
       "id": 12,
+      "liked":false,
       "title": "Annibale Colombo Sofa",
       "description": "The Annibale Colombo Sofa is a sophisticated and comfortable seating option, featuring exquisite design and premium upholstery for your living room.",
       "category": "furniture",
@@ -738,6 +750,7 @@ const products = [
     },
     {
       "id": 13,
+      "liked":false,
       "title": "Bedside Table African Cherry",
       "description": "The Bedside Table in African Cherry is a stylish and functional addition to your bedroom, providing convenient storage space and a touch of elegance.",
       "category": "furniture",
@@ -800,6 +813,7 @@ const products = [
     },
     {
       "id": 14,
+      "liked":false,
       "title": "Knoll Saarinen Executive Conference Chair",
       "description": "The Knoll Saarinen Executive Conference Chair is a modern and ergonomic chair, perfect for your office or conference room with its timeless design.",
       "category": "furniture",
@@ -862,6 +876,7 @@ const products = [
     },
     {
       "id": 15,
+      "liked":false,
       "title": "Wooden Bathroom Sink With Mirror",
       "description": "The Wooden Bathroom Sink with Mirror is a unique and stylish addition to your bathroom, featuring a wooden sink countertop and a matching mirror.",
       "category": "furniture",
@@ -924,6 +939,7 @@ const products = [
     },
     {
       "id": 16,
+      "liked":false,
       "title": "Apple",
       "description": "Fresh and crisp apples, perfect for snacking or incorporating into various recipes.",
       "category": "groceries",
@@ -982,6 +998,7 @@ const products = [
     },
     {
       "id": 17,
+      "liked":false,
       "title": "Beef Steak",
       "description": "High-quality beef steak, great for grilling or cooking to your preferred level of doneness.",
       "category": "groceries",
@@ -1040,6 +1057,7 @@ const products = [
     },
     {
       "id": 18,
+      "liked":false,
       "title": "Cat Food",
       "description": "Nutritious cat food formulated to meet the dietary needs of your feline friend.",
       "category": "groceries",
@@ -1099,6 +1117,7 @@ const products = [
     },
     {
       "id": 19,
+      "liked":false,
       "title": "Chicken Meat",
       "description": "Fresh and tender chicken meat, suitable for various culinary preparations.",
       "category": "groceries",
@@ -1158,6 +1177,7 @@ const products = [
     },
     {
       "id": 20,
+      "liked":false,
       "title": "Cooking Oil",
       "description": "Versatile cooking oil suitable for frying, sautéing, and various culinary applications.",
       "category": "groceries",
@@ -1216,6 +1236,7 @@ const products = [
     },
     {
       "id": 21,
+      "liked":false,
       "title": "Cucumber",
       "description": "Crisp and hydrating cucumbers, ideal for salads, snacks, or as a refreshing side.",
       "category": "groceries",
@@ -1274,6 +1295,7 @@ const products = [
     },
     {
       "id": 22,
+      "liked":false,
       "title": "Dog Food",
       "description": "Specially formulated dog food designed to provide essential nutrients for your canine companion.",
       "category": "groceries",
@@ -1333,6 +1355,7 @@ const products = [
     },
     {
       "id": 23,
+      "liked":false,
       "title": "Eggs",
       "description": "Fresh eggs, a versatile ingredient for baking, cooking, or breakfast.",
       "category": "groceries",
@@ -1391,6 +1414,7 @@ const products = [
     },
     {
       "id": 24,
+      "liked":false,
       "title": "Fish Steak",
       "description": "Quality fish steak, suitable for grilling, baking, or pan-searing.",
       "category": "groceries",
@@ -1449,6 +1473,7 @@ const products = [
     },
     {
       "id": 25,
+      "liked":true,
       "title": "Green Bell Pepper",
       "description": "Fresh and vibrant green bell pepper, perfect for adding color and flavor to your dishes.",
       "category": "groceries",
@@ -1507,6 +1532,7 @@ const products = [
     },
     {
       "id": 26,
+      "liked":false,
       "title": "Green Chili Pepper",
       "description": "Spicy green chili pepper, ideal for adding heat to your favorite recipes.",
       "category": "groceries",
@@ -1565,6 +1591,7 @@ const products = [
     },
     {
       "id": 27,
+      "liked":false,
       "title": "Honey Jar",
       "description": "Pure and natural honey in a convenient jar, perfect for sweetening beverages or drizzling over food.",
       "category": "groceries",
@@ -1623,6 +1650,7 @@ const products = [
     },
     {
       "id": 28,
+      "liked":false,
       "title": "Ice Cream",
       "description": "Creamy and delicious ice cream, available in various flavors for a delightful treat.",
       "category": "groceries",
@@ -1684,6 +1712,7 @@ const products = [
     },
     {
       "id": 29,
+      "liked":false,
       "title": "Juice",
       "description": "Refreshing fruit juice, packed with vitamins and great for staying hydrated.",
       "category": "groceries",
@@ -1742,6 +1771,7 @@ const products = [
     },
     {
       "id": 30,
+      "liked":false,
       "title": "Kiwi",
       "description": "Nutrient-rich kiwi, perfect for snacking or adding a tropical twist to your dishes.",
       "category": "groceries",

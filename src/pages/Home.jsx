@@ -5,12 +5,15 @@ import Products from '../data/products'
 import ProductCard from '../components/ProductCard'
 import SearchBar from '../components/SearchBar'
 
-const Home = () => {
+const Home = ({setFavourites}) => {
   
   const products = Products();
   const [showSidebar, setShowSidebar] = useState(false);
   const [query, setQuery] = useState('');
   const [results, setResults] = useState(products);
+
+  
+
 
   return (
     <div className='container'>
@@ -24,7 +27,7 @@ const Home = () => {
             <div className="right-side">
               <div className="row">
                 {results.map((product)=>(
-                    <ProductCard product={product} key={product.id}/>
+                    <ProductCard product={product} key={product.id} setFavourites={setFavourites}/>
                 ))}
                 </div>
             </div>

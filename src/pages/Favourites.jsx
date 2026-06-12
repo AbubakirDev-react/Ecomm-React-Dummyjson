@@ -1,14 +1,19 @@
-import React,{useState,useEffect} from 'react'
-import getProductById from '../data/products'
-import { Link } from 'react-router-dom'
+import { useEffect } from "react"
+import React from 'react'
+import Products,{ getProductById } from "../data/products"
+import { Link } from "react-router-dom"
 
+const liked_products = []
 
-export default function ProductCard({product,setFavourites}) {
-    
+export default function Favourites({favourites}) {
+  const products = Products();
 
-
+  const likedProducts = products.filter(product=>favourites.includes(product.id))
   return (
-    <div className='col-md-3 col-sm-6 p-2'>
+    <div className="row">
+      
+        {likedProducts.map((product,index)=>(
+          <div className='col-md-3 col-sm-6 p-2' key={index}>
         <div className="card h-100">
             <div className="card-header">
                 <img src={product.thumbnail} alt="" />
@@ -29,6 +34,9 @@ export default function ProductCard({product,setFavourites}) {
             </div>
             </div>
         </div>
+    </div>
+        ))}
+     
     </div>
   )
 }

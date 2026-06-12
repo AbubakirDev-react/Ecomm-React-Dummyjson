@@ -32,7 +32,7 @@ export default function ProductDetail({productId}) {
         </div>
         <div className="col-md-6 row p-3">
           <div className="col-md-12 p-3">
-            <h3 className='product-title'>{product.title} <h5 className='product-brand text-primary'>{product.brand} <i class="bi bi-patch-check-fill"></i> </h5></h3>
+            <h3 className='product-title'>{product.title} <h5 className='product-brand text-primary'>{product.brand} <i className="bi bi-patch-check-fill"></i> </h5></h3>
             <p className='shipping'></p>
             <p className='product-description'>{product.description}</p>
             </div>

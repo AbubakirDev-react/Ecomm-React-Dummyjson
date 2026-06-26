@@ -1,7 +1,42 @@
-@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto',sans-serif;
+@import 'tailwindcss';
+
+:root {
+
+/* ========================= */
+/* Light Theme */
+/* ========================= */
+
+--bg: #f8f9fb;
+--surface: #ffffff;
+--surface-hover: #f1f3f5;
+
+--primary: #21f1ab;
+--primary-hover: #13d998;
+
+--text: #171717;
+--text-secondary: #5f6368;
+
+--border: #e5e7eb;
+
+--success: #22c55e;
+--warning: #f59e0b;
+--danger: #ef4444;
+
+
+/* ========================= */
+/* Dark Theme */
+/* ========================= */
+
+--dark-bg: #171717;
+--dark-surface: #202124;
+--dark-surface-hover: #2a2b2d;
+
+--dark-primary: #21f1ab;
+--dark-primary-hover: #43f7bc;
+
+--dark-text: #f8f9fa;
+--dark-text-secondary: #b0b3b8;
+
+--dark-border: #323336;
+
 }

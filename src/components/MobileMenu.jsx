@@ -14,9 +14,9 @@ const menu_items = [
 export default function MobileMenu() {
   
   return (
-    <nav className='grid grid-cols-5 gap-2 w-full fixed bottom-0 left-0 p-3 bg-primary'>
+    <nav className='mobile-menu flex items-center justify-evenly gap-2 w-full fixed bottom-0 left-0 bg-primary'>
       {menu_items.map((item)=>(
-        <Link to={item.page} key={item.id} className={`flex items-center justify-center focus:text-gray-800`}>{item.icon}</Link>
+        <Link to={item.page} key={item.id} className={`flex items-center p-3 justify-center text-black/80`}>{item.icon}</Link>
       ))}  
     </nav>
   )

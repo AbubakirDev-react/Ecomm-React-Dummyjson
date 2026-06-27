@@ -27,26 +27,38 @@
 /* Dark Theme */
 /* ========================= */
 
---dark-bg: #171717;
---dark-surface: #202124;
---dark-surface-hover: #2a2b2d;
+[data-theme="dark"]{
 
---dark-primary: #21f1ab;
---dark-primary-hover: #43f7bc;
+--bg: #171717;
+--surface: #202124;
+--surface-hover: #2a2b2d;
 
---dark-text: #f8f9fa;
---dark-text-secondary: #b0b3b8;
+--primary: #21f1ab;
+--primary-hover: #43f7bc;
 
---dark-border: #323336;
+--text: #f8f9fa;
+--text-secondary: #b0b3b8;
+
+--border: #323336;
+
+--success: #22c55e;
+--warning: #f59e0b;
+--danger: #ef4444;
 }
-
+}
 body{
   background: var(--bg);
-  color: var(--text-secondary);
+  color: var(--text);
 }
-.bg-primary{
+.mobile-menu{
   background: var(--primary);
 }
-.text-active{
+.text-primary{
   color: var(--text);
+}
+.text-secondary{
+  color: var(--text-secondary);
+}
+.outline-primary{
+  outline: var(--primary);
 }

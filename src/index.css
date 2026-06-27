@@ -38,5 +38,15 @@
 --dark-text-secondary: #b0b3b8;
 
 --dark-border: #323336;
+}
 
+body{
+  background: var(--bg);
+  color: var(--text-secondary);
+}
+.bg-primary{
+  background: var(--primary);
+}
+.text-active{
+  color: var(--text);
 }

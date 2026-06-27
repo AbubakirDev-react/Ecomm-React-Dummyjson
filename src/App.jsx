@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import MobileMenu from './components/MobileMenu'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-      
-    </>
+    <div className='app'>
+      <MobileMenu />
+    </div>
   )
 }
 

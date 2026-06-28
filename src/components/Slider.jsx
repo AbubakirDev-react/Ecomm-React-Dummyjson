@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { ChevronRight,ChevronLeft } from 'lucide-react'
 
 const slides = [
@@ -14,7 +14,13 @@ const slides = [
 ]
 
 export default function Slider() {
-  const [currentIndex,setCurrentIndex] = useState(0);
+  const [currentIndex,setCurrentIndex] = useState(()=>{
+    const saved = localStorage.getItem('currentIndex')
+    return saved?JSON.parse(saved):0
+  });
+  useEffect(()=>{
+    localStorage.setItem('currentIndex',JSON.stringify(currentIndex))
+  },[currentIndex])
   const prevSlide = () => {
     const isFirstSlide = currentIndex===0
     isFirstSlide?setCurrentIndex(slides.length-1):setCurrentIndex(currentIndex-1)

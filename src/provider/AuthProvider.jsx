@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { AuthContext } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import {useWishlist} from "../hooks/useWishlist"
 
 export default function AuthProvider({children}){
   const [usersList,setUsersList] = useState(()=>{
@@ -13,7 +14,7 @@ export default function AuthProvider({children}){
   })
   const [error,setError] = useState([])
   const navigate = useNavigate();
-
+  const {createWishlist} = useWishlist()
   // useEffect usersList
 
   useEffect(()=>{
@@ -72,5 +73,5 @@ export default function AuthProvider({children}){
   }
   const currentUser = usersList.find(user=>user.email===currentEmail)
 
-  return <AuthContext.Provider value={{ signup,signin,signout,currentUser }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ signup,signin,signout,currentUser,currentEmail }}>{children}</AuthContext.Provider>
 }

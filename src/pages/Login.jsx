@@ -4,7 +4,7 @@ import { useAuth } from '../hooks/useAuth'
 export default function Login() {
   const [email,setEmail] = useState('');
   const [password,setPassword] = useState('');
-  const {signin} = useAuth();
+  const {signin,err} = useAuth();
   
   const  SubmitHandle = (e) =>{
     e.preventDefault()
@@ -20,6 +20,7 @@ export default function Login() {
           <div className='w-full flex outline-1 -outline-offset-1 rounded-xl  has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-(--primary) duration-75'>
           <input value={password} onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='Пароль' className='w-full p-3 outline-0 text-xl' />
         </div>
+        <p className='text-(--danger)'>{err}</p>
         <button className='bg-(--primary) p-3 rounded-2xl hover:bg-(--primary-hover) font-bold' type='submit'>Войти</button>
       </form>
     </div>

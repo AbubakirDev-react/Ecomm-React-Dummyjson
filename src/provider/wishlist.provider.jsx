@@ -26,6 +26,7 @@ const WishlistProvider =({children})=>{
       }
     }
   }
+
   const remove=(productId)=>{
     const filtered=wishlistItems.filter(item=>!(item.user===currentEmail&&item.product_id===productId))
     setWishlistItems(filtered)

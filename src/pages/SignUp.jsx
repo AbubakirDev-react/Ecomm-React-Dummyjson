@@ -7,7 +7,7 @@ export default function SignUp() {
   const [lName,setLName]=useState('');
   const [email,setEmail]=useState('');
   const [password,setPassword]=useState('');
-  const {signup}=useAuth();
+  const {signup,err}=useAuth();
   const  SubmitHandle = (e) =>{
     e.preventDefault()
     const data={
@@ -34,6 +34,7 @@ export default function SignUp() {
           <div className='w-full flex outline-1 -outline-offset-1 rounded-xl  has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-(--primary) duration-75'>
           <input required onChange={(e)=>setPassword(e.target.value)} type="password" placeholder='*******' className='w-full p-3 outline-0 text-xl' />
         </div>
+        <p className='text-(--danger)'>{err}</p>
         <button className='bg-(--primary) p-3 rounded-2xl hover:bg-(--primary-hover) font-bold mt-3' type='submit'>Создать и Войти</button>
       </form>
     </div>

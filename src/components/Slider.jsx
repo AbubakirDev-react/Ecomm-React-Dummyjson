@@ -13,7 +13,7 @@ const slides = [
   }
 ]
 
-export default function Slider() {
+export default function Slider({isActive}) {
   const [currentIndex,setCurrentIndex] = useState(()=>{
     const saved = localStorage.getItem('currentIndex')
     return saved?JSON.parse(saved):0
@@ -29,8 +29,9 @@ export default function Slider() {
     const isLastSlide = currentIndex===slides.length - 1
     isLastSlide?setCurrentIndex(0):setCurrentIndex(currentIndex+1)
   }
-  return (
-    <div className='max-w-350 h-70 w-full m-auto px-4 relative'>
+  if(isActive){ return (
+    
+      <div className='max-w-350 h-70 w-full m-auto px-4 relative'>
       <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>
       {/* left arrow */}
 
@@ -43,5 +44,5 @@ export default function Slider() {
       <ChevronRight />
     </div>
     </div>
-  )
+  )}
 }

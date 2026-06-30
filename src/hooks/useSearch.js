@@ -1,0 +1,7 @@
+import { useContext } from "react"
+import { SearchContext } from "../context/SearchContext"
+
+export const useSearch=()=>{
+  const context = useContext(SearchContext)
+  return context
+}

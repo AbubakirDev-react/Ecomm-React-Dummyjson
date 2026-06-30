@@ -39,13 +39,13 @@ export default function ProductCard({product}) {
         )}
       </div>
     <div className='flex flex-col px-3 py-2 relative'>
-        <h3 className='text-lg'>${product.price}  $<del className='text-black/40 ms-2 text-sm'>{Math.floor(product.price+product.price/100*product.discountPercentage)+'.99'}</del></h3>
+        <h3 className='text-lg'>${product.price}  <del className='text-(--text)/40 ms-2 text-sm'>${Math.floor(product.price+product.price/100*product.discountPercentage)+'.99'}</del></h3>
         {product.brand&&
         <h3 className='flex gap-1'>{product.brand} <CheckCircle2 color='blue' fill='transparent'/></h3>
         }
         <p className='text-sm w-full whitespace-nowrap overflow-hidden text-ellipsis'>{product.title}</p>
         <div className='flex items-center justify-start gap-1'>
-          <StarIcon size={18} fill='orange' color='orange'/>{product.rating} • <span className='text-black/60'>{product.reviews.length} reviews</span>
+          <StarIcon size={18} fill='orange' color='orange'/>{product.rating} • <span className='text-(--text)/60'>{product.reviews.length} reviews</span>
         </div>
       </div>
     </div>

@@ -8,11 +8,11 @@ export default function AuthProvider({children}){
     const saved = localStorage.getItem('usersList')
     return saved?JSON.parse(saved):[]
   })
+  const [err,setError] = useState(null);
   const [currentEmail,setCurrentEmail] = useState(()=>{
     const email = localStorage.getItem('currentEmail')
     return email?email:null
   })
-  const [error,setError] = useState([])
   const navigate = useNavigate();
   const {createWishlist} = useWishlist()
   // useEffect usersList
@@ -37,14 +37,17 @@ export default function AuthProvider({children}){
 
   const signin=(data)=>{
     const user = usersList.find(u=>u.email===data.email)
-    console.log(user)
-    console.log(data)
-    if(user && user.password===data.password ){
+    
+    if(!user){
+      setError('Почта не найдена!')
+    }
+    else{
+      if(user && user.password===data.password ){
       setCurrentEmail(user.email);
       navigate('/profile')
-      console.log('SignIn Success!')
     } else {
-      console.log('Email or Password invalid!')
+      setError('Почта или пароль неправильный!')
+    }
     }
   }
 
@@ -56,10 +59,8 @@ export default function AuthProvider({children}){
     setUsersList((prev)=>[...prev,data])
     setCurrentEmail(data.email)
     navigate('/profile')
-    console.log('Signup successfull!')
     } else {
-      console.log('Email exists!')
-      setError('Почта исползованная!')
+      setError('Почта уже использована!')
     }
   }
 
@@ -69,9 +70,8 @@ export default function AuthProvider({children}){
     setCurrentEmail(null);
     localStorage.removeItem('currentEmail')
     navigate('/')
-    console.log('Signout Successfull!')
   }
   const currentUser = usersList.find(user=>user.email===currentEmail)
 
-  return <AuthContext.Provider value={{ signup,signin,signout,currentUser,currentEmail }}>{children}</AuthContext.Provider>
+  return <AuthContext.Provider value={{ signup,signin,signout,currentUser,currentEmail,err }}>{children}</AuthContext.Provider>
 }

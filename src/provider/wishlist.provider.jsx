@@ -12,7 +12,6 @@ const WishlistProvider =({children})=>{
   const {currentEmail} = useAuth();
   const navigate = useNavigate();
   useEffect(()=>{
-    console.log('wishlist changed',wishlistItems)
     localStorage.setItem('wishlistItems',JSON.stringify(wishlistItems))
   },[wishlistItems])
   const add=(productId)=>{
@@ -28,14 +27,14 @@ const WishlistProvider =({children})=>{
     }
   }
   const remove=(productId)=>{
-    const filtered=wishlistItems.filter(item=>item.product_id!==productId && item.user === currentEmail)
+    const filtered=wishlistItems.filter(item=>!(item.user===currentEmail&&item.product_id===productId))
     setWishlistItems(filtered)
   }
   const isAdded  = (productId)=>{
     return wishlistItems.some(item=>item.product_id===productId&&item.user===currentEmail)
   }
   return(
-    <WishList.Provider value={{add,remove,isAdded}}>{children}</WishList.Provider>
+    <WishList.Provider value={{add,remove,isAdded,wishlistItems}}>{children}</WishList.Provider>
   )
 }
 

@@ -2,6 +2,8 @@ import { CheckCircle2, ChevronLeft, ChevronRight, Heart, ShoppingBasketIcon, Sta
 import React, { useState } from 'react'
 import { useWishlist } from '../../hooks/useWishlist'
 import { isAxiosError } from 'axios'
+import { useCart } from '../../hooks/useCart'
+import { useAuth } from '../../hooks/useAuth'
 
 export default function ProductCard({product}) {
   const images = product.images
@@ -9,6 +11,7 @@ export default function ProductCard({product}) {
     const saved = localStorage.getItem('currentImageIndex')
     return saved?JSON.parse(saved):0
   })
+  const {currentEmail} = useAuth();
   const prev = () => {
     const isFirstImage = currentIndex === 0
     setCurrentIndex(isFirstImage?images.length-1:currentIndex-1)
@@ -17,8 +20,17 @@ export default function ProductCard({product}) {
     const isLastImage = currentIndex === images.length-1
     setCurrentIndex(isLastImage?0:currentIndex+1)
   }
+  const {addProductToCart} = useCart();
 
   const {add,isAdded} = useWishlist();
+
+  const addToCart = (product) => {
+    if(!currentEmail){
+      navigate('/login')
+    } else {
+      addProductToCart(currentEmail, product)
+    }
+  }
   return (
     <div className='w-full rounded-3xl duration-300 shadow hover:shadow-lg hover:bg-(--primary-hover)/20 hover:scale-105'>
       <div className='w-full py-4 relative h-70 m-auto '>

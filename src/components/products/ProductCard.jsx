@@ -23,7 +23,6 @@ export default function ProductCard({product}) {
   const {addProductToCart} = useCart();
 
   const {add,isAdded} = useWishlist();
-
   const addToCart = (product) => {
     if(!currentEmail){
       navigate('/login')
@@ -34,7 +33,7 @@ export default function ProductCard({product}) {
   return (
     <div className='w-full rounded-3xl duration-300 shadow hover:shadow-lg hover:bg-(--primary-hover)/20 hover:scale-105'>
       <div className='w-full py-4 relative h-70 m-auto '>
-        <button className='absolute left-3 top-3 bg-(--primary) p-1.5 rounded-xl cursor-pointer text-white/70 hover:text-white'><ShoppingBasketIcon/></button> 
+        <button onClick={()=>addToCart()} className='absolute left-3 top-3 bg-(--primary) p-1.5 rounded-xl cursor-pointer text-white/70 hover:text-white'><ShoppingBasketIcon/></button> 
         <button className='absolute top-3 right-3 cursor-pointer active:scale-110 duration-300' onClick={()=>add(product.id)}>{isAdded(product.id)?<Heart size={27} color='red' className='duration-300 hover:fill-red-600 ' fill='red'/>:<Heart size={27} color='red' className='duration-300' />}</button>
         <img className='duration-300' src={product.images[currentIndex]} alt={product.title} />
         {product.images.length>=2 && (

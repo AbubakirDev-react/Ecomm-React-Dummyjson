@@ -9,6 +9,7 @@ export default function MobileHeaderMenu({setIsActive}) {
   const navigate = useNavigate();
   const {setQuery} = useSearch();
   const onSearch=(e)=>{
+    if(searchQuery.trim()==='') return
     e.preventDefault()
     setIsActive(false)
     setQuery(searchQuery)

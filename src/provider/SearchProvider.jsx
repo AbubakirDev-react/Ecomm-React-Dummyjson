@@ -1,6 +1,7 @@
 import { Profiler, useEffect, useState } from "react";
 import { SearchContext } from "../context/SearchContext";
 import { products } from "../data/products";
+import { useNavigate } from "react-router-dom";
 
 export default function SearchProvider({children}){
   const [query,setQuery] = useState('');
@@ -8,16 +9,18 @@ export default function SearchProvider({children}){
     const saved = localStorage.getItem('result')
     return saved?JSON.parse(saved):[]
   })
-  const search=(searchQuery)=>{
-    const filteredByTitle = products.filter((product)=>product.title.toLowerCase().includes(searchQuery.toLowerCase()))
-    const filteredByCategory = products.filter((product)=>product.category.toLowerCase().includes(searchQuery.toLowerCase()))
-   const filteredByBrand = products.filter((product)=>product.brand.toLowerCase().includes(searchQuery.toLowerCase()))
-    console.log(filteredByTitle,filteredByCategory,filteredByBrand)
-  }
+  const navigate = useNavigate()
   useEffect(()=>{
     search(query)
   },[query])
+  const search=(searchQuery)=>{
+    if(searchQuery.trim()==='') return setResult([])
+    navigate('/search')
+    const filteredByTitle = products.filter((product)=>product.title.toLowerCase().includes(searchQuery.toLowerCase()))
+    setResult([...filteredByTitle])
+    localStorage.setItem('result',JSON.stringify([...filteredByTitle]))
+  }
   return(
-    <SearchContext.Provider value={{search,setQuery}}>{children}</SearchContext.Provider>
+    <SearchContext.Provider value={{search,query,setQuery,result}}>{children}</SearchContext.Provider>
   );
 }

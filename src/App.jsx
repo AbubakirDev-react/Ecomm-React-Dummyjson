@@ -8,6 +8,7 @@ import Login from './pages/Login'
 import SignUp from './pages/SignUp'
 import UserProfile from './pages/UserProfile'
 import Wishlist from './pages/Wishlist'
+import SearchResultsPage from './pages/SearchResultsPage'
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
         <Route path="/signup" element={<SignUp/>} />
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
+        <Route path="/search" element={<SearchResultsPage/>} />
       </Routes>
       <MobileMenu />
     </div>

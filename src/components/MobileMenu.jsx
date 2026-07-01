@@ -1,12 +1,12 @@
 import { MenuItem } from '@headlessui/react'
-import { HeartIcon, HomeIcon, LucideHeart, MenuIcon, ShoppingCartIcon, UserCircle2 } from 'lucide-react'
+import { HeartIcon, HomeIcon, LucideHeart, MenuIcon, SearchIcon, ShoppingCartIcon, UserCircle2 } from 'lucide-react'
 import React, { act, useState } from 'react'
 import { Link } from 'react-router-dom'
 
 
 const menu_items = [
   {id:1, page:'/',icon:<HomeIcon/>},
-  {id:2, page:'/catalog',icon:<MenuIcon />},
+  {id:2, page:'/search',icon:<SearchIcon />},
   {id:3, page:'/wishlist',icon:<HeartIcon />},
   {id:4, page:'/cart',icon:<ShoppingCartIcon />},
   {id:5, page:'profile',icon:<UserCircle2 />}

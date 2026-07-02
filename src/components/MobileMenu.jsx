@@ -8,14 +8,14 @@ const menu_items = [
   {id:1, page:'/',icon:<HomeIcon/>},
   {id:2, page:'/search',icon:<SearchIcon />},
   {id:3, page:'/wishlist',icon:<HeartIcon />},
-  {id:4, page:'/cart',icon:<ShoppingCartIcon />},
-  {id:5, page:'profile',icon:<UserCircle2 />}
+  {id:4, page:'/checkout',icon:<ShoppingCartIcon />},
+  {id:5, page:'/profile',icon:<UserCircle2 />}
 ]
  
 export default function MobileMenu() {
   const [activeField,setActiveField] = useState(menu_items[0])
   return (
-    <nav className='mobile-menu flex items-center justify-evenly gap-2 w-full fixed bottom-0 left-0 bg-primary'>
+      <nav className='mobile-menu md:hidden flex items-center justify-evenly gap-2 w-full fixed bottom-0 left-0 bg-primary'>
       {menu_items.map((item)=>(
         <Link to={item.page} key={item.id} className={`flex items-center p-3 justify-center ${item===activeField?'text-(--text)':'text-(--text-secondary)'}`} onClick={()=>setActiveField(item)}>{item.icon}</Link>
       ))}  

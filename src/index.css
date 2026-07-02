@@ -1,11 +1,12 @@
 @import 'tailwindcss';
 
 :root {
-
-/* ========================= */
-/* Light Theme */
-/* ========================= */
-
+  [data-theme="light"]{
+  
+  /* ========================= */
+  /* Light Theme */
+  /* ========================= */
+  
 --bg: #f8f9fb;
 --surface: #ffffff;
 --surface-hover: #f1f3f5;
@@ -21,31 +22,35 @@
 --success: #22c55e;
 --warning: #f59e0b;
 --danger: #ef4444;
-
-
-/* ========================= */
-/* Dark Theme */
-/* ========================= */
-
-[data-theme="dark"]{
-
---bg: #171717;
---surface: #202124;
---surface-hover: #2a2b2d;
-
---primary: #21f1ab;
---primary-hover: #43f7bc;
-
---text: #f8f9fa;
---text-secondary: #b0b3b8;
-
---border: #323336;
-
---success: #22c55e;
---warning: #f59e0b;
---danger: #ef4444;
+  }
+  
+  /* ========================= */
+  /* Dark Theme */
+  /* ========================= */
+  
+  [data-theme="dark"]{
+  
+  
+    --bg: #171717;
+    --surface: #202124;
+    --surface-hover: #2a2b2d;
+    
+  --primary: #1a4d3c;
+  --primary-hover: #1e654d;
+  
+  --text: #f8f9fa;
+  --text-secondary: #b0b3b8;
+  
+  --border: #323336;
+  
+  --success: #22c55e;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  }
 }
-}
+
+
+
 body{
   background: var(--bg);
   color: var(--text);

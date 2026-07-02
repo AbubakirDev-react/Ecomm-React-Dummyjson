@@ -9,10 +9,13 @@ import SignUp from './pages/SignUp'
 import UserProfile from './pages/UserProfile'
 import Wishlist from './pages/Wishlist'
 import SearchResultsPage from './pages/SearchResultsPage'
+import CheckoutPage from './pages/CheckoutPage'
+import Navbar from './components/navbar'
 function App() {
 
   return (
     <div className='app'>
+      <Navbar />
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path="/signin" element={<Login/>} />
@@ -20,7 +23,9 @@ function App() {
         <Route path="/profile" element={<UserProfile/>} />
         <Route path="/wishlist" element={<Wishlist/>} />
         <Route path="/search" element={<SearchResultsPage/>} />
+        <Route path='/checkout' element={<CheckoutPage />} />
       </Routes>
+
       <MobileMenu />
     </div>
   )

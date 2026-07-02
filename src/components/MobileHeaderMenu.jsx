@@ -15,7 +15,7 @@ export default function MobileHeaderMenu({setIsActive}) {
     setQuery(searchQuery)
   }
   return (
-    <div className='flex flex-col gap-2 items-center'>
+    <div className='mx-auto max-w-200 flex flex-col gap-2 items-center'>
       <form className='p-4 w-full' onSubmit={onSearch}>
         <div className='w-full flex outline-1 -outline-offset-1 rounded-xl  has-[input:focus-within]:outline-2 has-[input:focus-within]:-outline-offset-2 has-[input:focus-within]:outline-(--primary) duration-75'>
           <div className='p-3 text-secondary flex items-center'><Search/></div>

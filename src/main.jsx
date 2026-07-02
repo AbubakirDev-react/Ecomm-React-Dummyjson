@@ -8,9 +8,11 @@ import { WishList } from './context/wishlist.context.js'
 import WishListProvider from './provider/wishlist.provider.jsx'
 import SearchProvider from './provider/SearchProvider.jsx'
 import CartProvider from './provider/CartProvider.jsx'
+import ThemeProvider from './context/ThemeContext.jsx'
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter>
+    <ThemeProvider>
     <SearchProvider>
     <AuthProvider>
       <CartProvider>
@@ -21,6 +23,7 @@ createRoot(document.getElementById('root')).render(
       </CartProvider>
     </AuthProvider>
     </SearchProvider>
+    </ThemeProvider>
     </BrowserRouter>
   </StrictMode>,
 )

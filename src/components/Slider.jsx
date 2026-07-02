@@ -31,7 +31,7 @@ export default function Slider({isActive}) {
   }
   if(isActive){ return (
     
-      <div className='max-w-350 h-70 w-full m-auto px-4 relative'>
+      <div className='max-w-350 h-70 sm:h-90 md:h-110 lg:h-140 xl:h-160 w-full m-auto px-4 relative'>
       <div style={{backgroundImage:`url(${slides[currentIndex].url})`}} className='w-full h-full rounded-2xl bg-center bg-cover duration-500'></div>
       {/* left arrow */}
 

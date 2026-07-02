@@ -1,9 +1,10 @@
-import { CheckCircle2, ChevronLeft, ChevronRight, Heart, ShoppingBasketIcon, StarIcon } from 'lucide-react'
+import { CheckCircle2, ChevronLeft, ChevronRight, Heart, Minus, Plus, ShoppingBasketIcon, StarIcon, Trash2 } from 'lucide-react'
 import React, { useState } from 'react'
 import { useWishlist } from '../../hooks/useWishlist'
 import { isAxiosError } from 'axios'
 import { useCart } from '../../hooks/useCart'
 import { useAuth } from '../../hooks/useAuth'
+import { useNavigate } from 'react-router-dom'
 
 export default function ProductCard({product}) {
   const images = product.images
@@ -20,20 +21,32 @@ export default function ProductCard({product}) {
     const isLastImage = currentIndex === images.length-1
     setCurrentIndex(isLastImage?0:currentIndex+1)
   }
-  const {addProductToCart} = useCart();
+  const {addProductToCart,deleteFromCart,isAddedtoCart,currentItemQuantity,minusQuantity} = useCart();
 
   const {add,isAdded} = useWishlist();
-  const addToCart = (product) => {
+  const navigate = useNavigate();
+  const addToCart = (id) => {
     if(!currentEmail){
-      navigate('/login')
+      navigate('/signin')
+      return;
     } else {
-      addProductToCart(currentEmail, product)
+      addProductToCart(id)
     }
   }
+  const isInCart = isAddedtoCart(product.id)
+  const quantity = currentItemQuantity(product.id)
   return (
     <div className='w-full rounded-3xl duration-300 shadow hover:shadow-lg hover:bg-(--primary-hover)/20 hover:scale-105'>
       <div className='w-full py-4 relative h-70 m-auto '>
-        <button onClick={()=>addToCart()} className='absolute left-3 top-3 bg-(--primary) p-1.5 rounded-xl cursor-pointer text-white/70 hover:text-white'><ShoppingBasketIcon/></button> 
+        {isInCart?
+        
+        <div className='absolute flex items-center gap-0.5 left-3 top-3 rounded-xl cursor-pointer text-(--text-secondary) border border-(--primary)'>
+          <button onClick={()=>addToCart(product.id)} className='text-(--primary) px-2 py-1 rounded hover:text-(--primary-hover)'><Plus/></button>
+          <span className='bg-transparent px-2 py-1 rounded text-(--primary)'>{quantity}</span>
+          {quantity!==1?<button onClick={()=>minusQuantity(product.id)} className='text-(--primary) px-2 py-1 rounded hover:text-(--primary-hover)'><Minus/></button>:<button onClick={()=>deleteFromCart(product.id)} className='px-2 py-1 rounded hover:text-(--text)'><Trash2/></button>}
+          
+          </div>: <button onClick={()=>addToCart(product.id)} className='absolute left-3 top-3 bg-(--primary) p-1.5 rounded-xl cursor-pointer text-white/70 hover:text-white'><ShoppingBasketIcon/></button>
+      }
         <button className='absolute top-3 right-3 cursor-pointer active:scale-110 duration-300' onClick={()=>add(product.id)}>{isAdded(product.id)?<Heart size={27} color='red' className='duration-300 hover:fill-red-600 ' fill='red'/>:<Heart size={27} color='red' className='duration-300' />}</button>
         <img className='duration-300' src={product.images[currentIndex]} alt={product.title} />
         {product.images.length>=2 && (
